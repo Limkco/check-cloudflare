@@ -14,7 +14,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 输出文件 = 'result.csv'
 进度文件 = 'progress.txt'
 每次检测数量 = 20000
-# 第一次运行时自动下载的域名数量（提取前10万个）
+# 第一次运行时自动下载的域名数量（提取前100万个）
 初始下载数量 = 1000000
 # GitHub Actions 网络极佳，可将并发数调高以显著加快检测速度
 最大并发数 = 30 
@@ -26,7 +26,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 def 下载并生成域名列表():
     """
-    如果不存在 domains.txt，则从 Tranco 自动下载最新的全球 Top 1M 列表并提取前 10万个
+    如果不存在 domains.txt，则从 Tranco 自动下载最新的全球 Top 1M 列表并提取前 100万个
     """
     if os.path.exists(输入文件):
         return
